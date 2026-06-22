@@ -28,8 +28,8 @@ jobs:
 
       - name: Setup pnpm
         run: |
-          corepack enable
-          corepack prepare pnpm@11.5.3 --activate
+          npm install -g pnpm@11.5.3
+          pnpm --version
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
