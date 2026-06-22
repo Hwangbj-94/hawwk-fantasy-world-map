@@ -164,9 +164,9 @@ h2 {
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background: #f0c766;
+  background: #d84a3a;
   border: 3px solid #302316;
-  box-shadow: 0 0 0 4px rgba(240, 199, 102, 0.28), 0 12px 26px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 0 4px rgba(216, 74, 58, 0.28), 0 12px 26px rgba(0, 0, 0, 0.28);
 }
 
 .map-marker span {
