@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
-  <title id="title">Ancient stone gate under a pale sky</title>
-  <desc id="desc">A ruined stone gate standing in a barren landscape.</desc>
+  <title id="title">창백한 하늘 아래의 고대 석문</title>
+  <desc id="desc">황량한 풍경 속에 서 있는 무너진 석문 삽화입니다.</desc>
   <rect width="900" height="520" fill="#c9d4d4"/>
   <path fill="#8c918a" d="M0 375c160-43 299-39 455 0s288 24 445-28v173H0z"/>
   <path fill="#4d504c" d="M240 120h85v300h-85zm335 0h85v300h-85z"/>

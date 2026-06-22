@@ -11,6 +11,13 @@ interface MapViewProps {
   onMarkerClick: (marker: WorldMarker) => void;
 }
 
+const MARKER_TYPE_CLASSES: Record<string, string> = {
+  이동로: 'route',
+  기록관: 'archive',
+  숲: 'forest',
+  폐허: 'ruin'
+};
+
 function MapBounds({ config }: { config: MapConfig }) {
   const map = useMap();
 
@@ -28,7 +35,13 @@ function MapBounds({ config }: { config: MapConfig }) {
 }
 
 function markerIcon(type: string) {
-  const markerClass = type.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const normalizedType =
+    MARKER_TYPE_CLASSES[type] ??
+    type
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+  const markerClass = normalizedType || 'default';
 
   return L.divIcon({
     className: `map-marker map-marker-${markerClass}`,

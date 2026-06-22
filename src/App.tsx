@@ -42,7 +42,7 @@ export default function App() {
       })
       .catch(() => {
         if (isMounted) {
-          setLoadError('The map data could not be loaded.');
+          setLoadError('지도 데이터를 불러오지 못했습니다.');
         }
       });
 
@@ -106,16 +106,16 @@ export default function App() {
   if (!mapData || !selectedProgressLevel) {
     return (
       <main className="app-shell state-shell">
-        <p>Loading map...</p>
+        <p>지도를 불러오는 중...</p>
       </main>
     );
   }
 
   return (
     <main className="app-shell">
-      <aside className="side-panel" aria-label="Map controls">
+      <aside className="side-panel" aria-label="지도 조작">
         <div>
-          <p className="eyebrow">Fantasy Atlas</p>
+          <p className="eyebrow">판타지 지도</p>
           <h1>{mapData.config.title}</h1>
           {mapData.config.subtitle ? <p className="subtitle">{mapData.config.subtitle}</p> : null}
         </div>
@@ -130,11 +130,11 @@ export default function App() {
 
         <div className="marker-count" aria-live="polite">
           <strong>{visibleMarkers.length}</strong>
-          <span>visible regions</span>
+          <span>공개된 지역</span>
         </div>
       </aside>
 
-      <section className="map-panel" aria-label="Interactive fantasy map">
+      <section className="map-panel" aria-label="인터랙티브 판타지 지도">
         <MapView
           config={mapData.config}
           markers={visibleMarkers}
@@ -144,28 +144,28 @@ export default function App() {
 
       {confirmStep === 'spoiler-warning' && pendingProgressLevel ? (
         <ConfirmDialog
-          title="Spoiler warning"
-          confirmLabel="Continue"
+          title="스포일러 경고"
+          confirmLabel="계속"
           onCancel={cancelProgressChange}
           onConfirm={confirmProgressWarning}
         >
           <p>
-            Changing story progress may reveal locations, names, and clues from later episodes.
+            이야기 진행도를 바꾸면 이후 회차의 장소, 이름, 단서가 공개될 수 있습니다.
           </p>
-          <p>Requested level: {pendingProgressLevel.label}</p>
+          <p>변경하려는 단계: {pendingProgressLevel.label}</p>
         </ConfirmDialog>
       ) : null}
 
       {confirmStep === 'final-confirmation' && pendingProgressLevel ? (
         <ConfirmDialog
-          title="Confirm progress change"
-          confirmLabel="Reveal this level"
+          title="진행도 변경 확인"
+          confirmLabel="이 단계까지 공개"
           onCancel={cancelProgressChange}
           onConfirm={applyProgressChange}
         >
           <p>
-            Final confirmation: switch the map to {pendingProgressLevel.label} and save this
-            setting on this device?
+            최종 확인입니다. 지도를 {pendingProgressLevel.label} 단계로 바꾸고 이 기기에
+            설정을 저장할까요?
           </p>
         </ConfirmDialog>
       ) : null}

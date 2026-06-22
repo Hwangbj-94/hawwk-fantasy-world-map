@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
-  <title id="title">Grayharbor skyline over dark water</title>
-  <desc id="desc">A simple harbor illustration with mist, water, and distant towers.</desc>
+  <title id="title">어두운 물 위의 잿빛항 전경</title>
+  <desc id="desc">안개와 물, 멀리 보이는 탑이 있는 단순한 항구 삽화입니다.</desc>
   <rect width="900" height="520" fill="#18394a"/>
   <path fill="#d0d8d4" opacity="0.26" d="M0 130c170-49 314-34 430 21s261 37 470-31v137H0z"/>
   <path fill="#0d2432" d="M0 360h900v160H0z"/>

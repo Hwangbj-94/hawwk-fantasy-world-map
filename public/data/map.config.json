@@ -1,9 +1,9 @@
 {
-  "title": "The Lands Beyond the Ninth Gate",
-  "subtitle": "An interactive map that opens as the story advances.",
+  "title": "아홉 번째 문 너머의 땅",
+  "subtitle": "이야기의 진행도에 따라 조금씩 열리는 인터랙티브 지도입니다.",
   "mapImage": {
     "src": "assets/placeholder-map.svg",
-    "alt": "Placeholder fantasy terrain map",
+    "alt": "임시 판타지 지형 지도",
     "width": 1600,
     "height": 1000
   },

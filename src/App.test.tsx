@@ -32,11 +32,11 @@ vi.mock('./components/MapView', () => ({
 }));
 
 const mapConfig: MapConfig = {
-  title: 'Test Atlas',
-  subtitle: 'Test subtitle',
+  title: '테스트 지도',
+  subtitle: '테스트 부제',
   mapImage: {
     src: 'assets/placeholder-map.svg',
-    alt: 'Placeholder map',
+    alt: '임시 지도',
     width: 1600,
     height: 1000
   },
@@ -52,48 +52,48 @@ const mapConfig: MapConfig = {
 const progressLevels: ProgressLevel[] = [
   {
     id: 'prologue',
-    label: 'Prologue',
+    label: '프롤로그',
     maxRevealOrder: 1,
-    description: 'Early map.'
+    description: '초반 지도.'
   },
   {
     id: 'episode-8',
-    label: 'Episode 8',
+    label: '8화',
     maxRevealOrder: 6,
-    description: 'Late map.'
+    description: '후반 지도.'
   }
 ];
 
 const markers: WorldMarker[] = [
   {
     id: 'grayharbor',
-    name: 'Grayharbor',
-    type: 'Port City',
+    name: '잿빛항',
+    type: '항구 도시',
     position: { x: 330, y: 730 },
     revealOrder: 1,
-    revealLabel: 'Known from the prologue',
-    summary: 'Safe early region.',
+    revealLabel: '프롤로그에서 알려짐',
+    summary: '초반에 안전하게 공개되는 지역입니다.',
     image: {
       src: 'assets/grayharbor.svg',
-      alt: 'Grayharbor skyline'
+      alt: '잿빛항 전경'
     },
-    relatedEpisodes: ['Prologue'],
-    tags: ['coast']
+    relatedEpisodes: ['프롤로그'],
+    tags: ['해안']
   },
   {
     id: 'ninth-gate',
-    name: 'The Ninth Gate',
-    type: 'Ruin',
+    name: '아홉 번째 문',
+    type: '폐허',
     position: { x: 1290, y: 285 },
     revealOrder: 6,
-    revealLabel: 'Major spoiler',
-    summary: 'Hidden late region.',
+    revealLabel: '중대 스포일러',
+    summary: '후반에 숨겨진 지역입니다.',
     image: {
       src: 'assets/ninth-gate.svg',
-      alt: 'Ancient stone gate'
+      alt: '고대 석문'
     },
-    relatedEpisodes: ['Episode 8'],
-    tags: ['spoiler']
+    relatedEpisodes: ['8화'],
+    tags: ['스포일러']
   }
 ];
 
@@ -138,33 +138,33 @@ describe('fantasy map spoiler controls', () => {
   it('requires two confirmations before changing progress', async () => {
     render(<App />);
 
-    expect(await screen.findByText('Grayharbor')).toBeInTheDocument();
-    expect(screen.queryByText('The Ninth Gate')).not.toBeInTheDocument();
+    expect(await screen.findByText('잿빛항')).toBeInTheDocument();
+    expect(screen.queryByText('아홉 번째 문')).not.toBeInTheDocument();
 
-    fireEvent.change(screen.getByLabelText('Story progress'), {
+    fireEvent.change(screen.getByLabelText('이야기 진행도'), {
       target: { value: 'episode-8' }
     });
-    expect(screen.getByRole('dialog', { name: 'Spoiler warning' })).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));
-    expect(screen.queryByText('The Ninth Gate')).not.toBeInTheDocument();
+    expect(screen.getByRole('dialog', { name: '스포일러 경고' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '취소' }));
+    expect(screen.queryByText('아홉 번째 문')).not.toBeInTheDocument();
     expect(localStorage.getItem(PROGRESS_STORAGE_KEY)).toBeNull();
 
-    fireEvent.change(screen.getByLabelText('Story progress'), {
+    fireEvent.change(screen.getByLabelText('이야기 진행도'), {
       target: { value: 'episode-8' }
     });
-    fireEvent.click(screen.getByRole('button', { name: 'Continue' }));
-    expect(screen.getByRole('dialog', { name: 'Confirm progress change' })).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));
-    expect(screen.queryByText('The Ninth Gate')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '계속' }));
+    expect(screen.getByRole('dialog', { name: '진행도 변경 확인' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '취소' }));
+    expect(screen.queryByText('아홉 번째 문')).not.toBeInTheDocument();
     expect(localStorage.getItem(PROGRESS_STORAGE_KEY)).toBeNull();
 
-    fireEvent.change(screen.getByLabelText('Story progress'), {
+    fireEvent.change(screen.getByLabelText('이야기 진행도'), {
       target: { value: 'episode-8' }
     });
-    fireEvent.click(screen.getByRole('button', { name: 'Continue' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Reveal this level' }));
+    fireEvent.click(screen.getByRole('button', { name: '계속' }));
+    fireEvent.click(screen.getByRole('button', { name: '이 단계까지 공개' }));
 
-    expect(await screen.findByText('The Ninth Gate')).toBeInTheDocument();
+    expect(await screen.findByText('아홉 번째 문')).toBeInTheDocument();
     expect(localStorage.getItem(PROGRESS_STORAGE_KEY)).toBe('episode-8');
   });
 
@@ -172,13 +172,13 @@ describe('fantasy map spoiler controls', () => {
     render(<App />);
 
     const map = await screen.findByTestId('map-view');
-    expect(within(map).getByText('Grayharbor')).toBeInTheDocument();
-    expect(screen.queryByText('The Ninth Gate')).not.toBeInTheDocument();
-    expect(screen.queryByAltText('Ancient stone gate')).not.toBeInTheDocument();
+    expect(within(map).getByText('잿빛항')).toBeInTheDocument();
+    expect(screen.queryByText('아홉 번째 문')).not.toBeInTheDocument();
+    expect(screen.queryByAltText('고대 석문')).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Grayharbor' }));
-    expect(screen.getByRole('dialog', { name: 'Grayharbor' })).toBeInTheDocument();
-    expect(screen.getByAltText('Grayharbor skyline')).toBeInTheDocument();
-    expect(screen.queryByAltText('Ancient stone gate')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '잿빛항' }));
+    expect(screen.getByRole('dialog', { name: '잿빛항' })).toBeInTheDocument();
+    expect(screen.getByAltText('잿빛항 전경')).toBeInTheDocument();
+    expect(screen.queryByAltText('고대 석문')).not.toBeInTheDocument();
   });
 });

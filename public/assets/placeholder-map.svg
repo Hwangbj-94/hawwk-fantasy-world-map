@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder fantasy terrain map</title>
-  <desc id="desc">A painted style placeholder map with seas, mountains, forests, roads, and island regions.</desc>
+  <title id="title">임시 판타지 지형 지도</title>
+  <desc id="desc">바다, 산맥, 숲, 길, 섬 지역이 표시된 회화풍 임시 지도입니다.</desc>
   <defs>
     <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#1f6b8a"/>
@@ -37,8 +37,8 @@
     <circle cx="620" cy="642" r="18"/>
   </g>
   <g fill="#5d5145" font-family="Georgia, serif" font-size="38" opacity="0.78">
-    <text x="250" y="795">Grayharbor</text>
-    <text x="825" y="470">Velorian Heights</text>
-    <text x="1130" y="710">Thornwake</text>
+    <text x="250" y="795">잿빛항</text>
+    <text x="825" y="470">벨로리안 고지</text>
+    <text x="1130" y="710">쏜웨이크</text>
   </g>
 </svg>

@@ -1,20 +1,20 @@
 [
   {
     "id": "prologue",
-    "label": "Prologue",
+    "label": "프롤로그",
     "maxRevealOrder": 1,
-    "description": "Only the safest early locations are visible."
+    "description": "초반부터 안전하게 공개되는 장소만 표시합니다."
   },
   {
     "id": "episode-3",
-    "label": "Episode 3",
+    "label": "3화",
     "maxRevealOrder": 3,
-    "description": "Reveals places known after the first major journey."
+    "description": "첫 번째 큰 여정 이후 알려진 장소를 표시합니다."
   },
   {
     "id": "episode-8",
-    "label": "Episode 8",
+    "label": "8화",
     "maxRevealOrder": 6,
-    "description": "Reveals later-story regions and faction sites."
+    "description": "후반부 지역과 세력 거점을 표시합니다."
   }
 ]

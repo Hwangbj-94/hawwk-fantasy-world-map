@@ -13,9 +13,9 @@ export function ProgressSelector({
 }: ProgressSelectorProps) {
   return (
     <label className="progress-selector">
-      <span>Story progress</span>
+      <span>이야기 진행도</span>
       <select
-        aria-label="Story progress"
+        aria-label="이야기 진행도"
         value={selectedProgressLevel.id}
         onChange={(event) => onRequestChange(event.target.value)}
       >

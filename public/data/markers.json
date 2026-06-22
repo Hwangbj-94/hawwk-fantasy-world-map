@@ -1,69 +1,69 @@
 [
   {
     "id": "grayharbor",
-    "name": "Grayharbor",
-    "type": "Port City",
+    "name": "잿빛항",
+    "type": "항구 도시",
     "position": { "x": 330, "y": 730 },
     "revealOrder": 1,
-    "revealLabel": "Known from the prologue",
-    "summary": "A fog-bound harbor where merchant houses, smugglers, and tired sailors trade rumors before sunrise.",
+    "revealLabel": "프롤로그에서 알려짐",
+    "summary": "안개에 잠긴 항구입니다. 상회와 밀수꾼, 지친 선원들이 해 뜨기 전의 소문을 사고팝니다.",
     "image": {
       "src": "assets/grayharbor.svg",
-      "alt": "Grayharbor skyline over dark water"
+      "alt": "어두운 물 위의 잿빛항 전경"
     },
-    "relatedEpisodes": ["Prologue", "Episode 1"],
-    "tags": ["coast", "trade", "rumors"]
+    "relatedEpisodes": ["프롤로그", "1화"],
+    "tags": ["해안", "교역", "소문"]
   },
   {
     "id": "cinder-road",
-    "name": "Cinder Road",
-    "type": "Route",
+    "name": "잿불길",
+    "type": "이동로",
     "position": { "x": 640, "y": 590 },
     "revealOrder": 2,
-    "revealLabel": "Revealed after the first border crossing",
-    "summary": "An old imperial road paved with black stone. Travelers say it remembers the heat of a vanished war.",
-    "relatedEpisodes": ["Episode 2", "Episode 3"],
-    "tags": ["road", "empire", "border"]
+    "revealLabel": "첫 국경 통과 이후 공개",
+    "summary": "검은 돌로 포장된 오래된 제국의 길입니다. 여행자들은 이 길이 사라진 전쟁의 열기를 아직 기억한다고 말합니다.",
+    "relatedEpisodes": ["2화", "3화"],
+    "tags": ["길", "제국", "국경"]
   },
   {
     "id": "velorian-archive",
-    "name": "Velorian Archive",
-    "type": "Archive",
+    "name": "벨로리안 기록관",
+    "type": "기록관",
     "position": { "x": 905, "y": 420 },
     "revealOrder": 3,
-    "revealLabel": "Revealed when the archive is named",
-    "summary": "A cliffside library guarded by oath-bound scholars and a door that opens only to unfinished questions.",
+    "revealLabel": "기록관의 이름이 언급되면 공개",
+    "summary": "절벽에 세워진 장서관입니다. 맹세로 묶인 학자들과, 끝나지 않은 질문에만 열리는 문이 지키고 있습니다.",
     "image": {
       "src": "assets/velorian-archive.svg",
-      "alt": "Cliffside archive tower at dusk"
+      "alt": "해질녘 절벽 위의 기록관 탑"
     },
-    "relatedEpisodes": ["Episode 3", "Episode 4"],
-    "tags": ["lore", "scholars", "cliffs"]
+    "relatedEpisodes": ["3화", "4화"],
+    "tags": ["전승", "학자", "절벽"]
   },
   {
     "id": "thornwake",
-    "name": "Thornwake",
-    "type": "Forest",
+    "name": "쏜웨이크",
+    "type": "숲",
     "position": { "x": 1130, "y": 665 },
     "revealOrder": 5,
-    "revealLabel": "Late arc spoiler",
-    "summary": "A living forest where paths rearrange themselves around secrets, grief, and blood bargains.",
-    "relatedEpisodes": ["Episode 7", "Episode 8"],
-    "tags": ["forest", "spoiler", "curse"]
+    "revealLabel": "후반부 스포일러",
+    "summary": "살아 있는 숲입니다. 길들은 비밀과 슬픔, 피의 거래를 피해 스스로 모습을 바꿉니다.",
+    "relatedEpisodes": ["7화", "8화"],
+    "tags": ["숲", "스포일러", "저주"]
   },
   {
     "id": "ninth-gate",
-    "name": "The Ninth Gate",
-    "type": "Ruin",
+    "name": "아홉 번째 문",
+    "type": "폐허",
     "position": { "x": 1290, "y": 285 },
     "revealOrder": 6,
-    "revealLabel": "Major spoiler",
-    "summary": "A broken monumental gate that should not exist on any surviving map.",
+    "revealLabel": "중대 스포일러",
+    "summary": "현존하는 어떤 지도에도 존재해서는 안 되는, 부서진 거대한 문입니다.",
     "image": {
       "src": "assets/ninth-gate.svg",
-      "alt": "Ancient stone gate under a pale sky"
+      "alt": "창백한 하늘 아래의 고대 석문"
     },
-    "relatedEpisodes": ["Episode 8"],
-    "tags": ["ruin", "gate", "major-spoiler"]
+    "relatedEpisodes": ["8화"],
+    "tags": ["폐허", "문", "중대 스포일러"]
   }
 ]

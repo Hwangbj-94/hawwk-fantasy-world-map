@@ -20,7 +20,7 @@ export function RegionModal({ marker, onClose }: RegionModalProps) {
             <p className="eyebrow">{marker.type}</p>
             <h2 id="region-dialog-title">{marker.name}</h2>
           </div>
-          <button aria-label="Close region details" className="icon-button" type="button" onClick={onClose}>
+          <button aria-label="지역 상세 닫기" className="icon-button" type="button" onClick={onClose}>
             ×
           </button>
         </div>
@@ -33,16 +33,16 @@ export function RegionModal({ marker, onClose }: RegionModalProps) {
 
         <dl className="detail-list">
           <div>
-            <dt>Reveal</dt>
+            <dt>공개 조건</dt>
             <dd>{marker.revealLabel}</dd>
           </div>
           <div>
-            <dt>Episodes</dt>
+            <dt>관련 회차</dt>
             <dd>{marker.relatedEpisodes.join(', ')}</dd>
           </div>
         </dl>
 
-        <ul className="tag-list" aria-label="Tags">
+        <ul className="tag-list" aria-label="태그">
           {marker.tags.map((tag) => (
             <li key={tag}>{tag}</li>
           ))}

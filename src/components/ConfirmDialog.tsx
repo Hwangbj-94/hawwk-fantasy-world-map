@@ -13,7 +13,7 @@ export function ConfirmDialog({
   title,
   children,
   confirmLabel,
-  cancelLabel = 'Cancel',
+  cancelLabel = '취소',
   onConfirm,
   onCancel
 }: ConfirmDialogProps) {
