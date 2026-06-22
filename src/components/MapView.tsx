@@ -1,7 +1,8 @@
 import L from 'leaflet';
 import { CRS } from 'leaflet';
+import type { LeafletMouseEvent } from 'leaflet';
 import { ImageOverlay, MapContainer, Marker, Tooltip, useMap } from 'react-leaflet';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { MapConfig, WorldMarker } from '../types';
 import { assetUrl } from '../utils/assets';
 
@@ -51,6 +52,71 @@ function markerIcon(type: string) {
   });
 }
 
+function formatZoomScale(zoom: number): string {
+  const percent = 100 * 2 ** zoom;
+  const roundedPercent = percent >= 20 ? Math.round(percent) : Number(percent.toFixed(1));
+
+  return `${roundedPercent}%`;
+}
+
+function CoordinateReadout() {
+  const map = useMap();
+  const [coordinate, setCoordinate] = useState<{ x: number; y: number } | null>(null);
+
+  useEffect(() => {
+    function handleMouseMove(event: LeafletMouseEvent) {
+      setCoordinate({
+        x: Math.round(event.latlng.lng),
+        y: Math.round(event.latlng.lat)
+      });
+    }
+
+    function handleMouseOut() {
+      setCoordinate(null);
+    }
+
+    map.on('mousemove', handleMouseMove);
+    map.on('mouseout', handleMouseOut);
+
+    return () => {
+      map.off('mousemove', handleMouseMove);
+      map.off('mouseout', handleMouseOut);
+    };
+  }, [map]);
+
+  return (
+    <div className="coordinate-readout" aria-label="현재 지도 좌표">
+      {coordinate ? `X: ${coordinate.x}, Y: ${coordinate.y}` : 'X: -, Y: -'}
+    </div>
+  );
+}
+
+function ScaleReadout() {
+  const map = useMap();
+  const [zoom, setZoom] = useState(() => map.getZoom());
+
+  useEffect(() => {
+    function updateZoom() {
+      setZoom(map.getZoom());
+    }
+
+    updateZoom();
+    map.on('zoom', updateZoom);
+    map.on('zoomend', updateZoom);
+
+    return () => {
+      map.off('zoom', updateZoom);
+      map.off('zoomend', updateZoom);
+    };
+  }, [map]);
+
+  return (
+    <div className="scale-readout" aria-label="현재 지도 축척">
+      축척 {formatZoomScale(zoom)}
+    </div>
+  );
+}
+
 export function MapView({ config, markers, onMarkerClick }: MapViewProps) {
   const bounds = useMemo<L.LatLngBoundsExpression>(
     () => [
@@ -62,6 +128,7 @@ export function MapView({ config, markers, onMarkerClick }: MapViewProps) {
 
   return (
     <MapContainer
+      attributionControl={false}
       center={[config.initialView.center.y, config.initialView.center.x]}
       className="map-canvas"
       crs={CRS.Simple}
@@ -78,6 +145,8 @@ export function MapView({ config, markers, onMarkerClick }: MapViewProps) {
         url={assetUrl(config.mapImage.src)}
       />
       <MapBounds config={config} />
+      <CoordinateReadout />
+      <ScaleReadout />
 
       {markers.map((marker) => (
         <Marker

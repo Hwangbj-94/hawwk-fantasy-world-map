@@ -162,7 +162,10 @@ describe('fantasy map spoiler controls', () => {
       target: { value: 'episode-8' }
     });
     fireEvent.click(screen.getByRole('button', { name: '계속' }));
-    fireEvent.click(screen.getByRole('button', { name: '이 단계까지 공개' }));
+    expect(
+      screen.getByText('최종 확인입니다. 진짜 지도를 8화 단계로 바꾸시겠습니까? 스포일러는 본인 책임입니다!?')
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '네, 괜찮습니다.' }));
 
     expect(await screen.findByText('아홉 번째 문')).toBeInTheDocument();
     expect(localStorage.getItem(PROGRESS_STORAGE_KEY)).toBe('episode-8');

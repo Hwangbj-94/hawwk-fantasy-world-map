@@ -159,13 +159,13 @@ export default function App() {
       {confirmStep === 'final-confirmation' && pendingProgressLevel ? (
         <ConfirmDialog
           title="진행도 변경 확인"
-          confirmLabel="이 단계까지 공개"
+          confirmLabel="네, 괜찮습니다."
           onCancel={cancelProgressChange}
           onConfirm={applyProgressChange}
         >
           <p>
-            최종 확인입니다. 지도를 {pendingProgressLevel.label} 단계로 바꾸고 이 기기에
-            설정을 저장할까요?
+            최종 확인입니다. 진짜 지도를 {pendingProgressLevel.label} 단계로 바꾸시겠습니까?
+            스포일러는 본인 책임입니다!?
           </p>
         </ConfirmDialog>
       ) : null}
