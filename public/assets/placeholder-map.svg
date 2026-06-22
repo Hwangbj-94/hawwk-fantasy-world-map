@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder fantasy terrain map</title>
+  <desc id="desc">A painted style placeholder map with seas, mountains, forests, roads, and island regions.</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f6b8a"/>
+      <stop offset="1" stop-color="#0f3347"/>
+    </linearGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d7c28a"/>
+      <stop offset="0.45" stop-color="#8fb06a"/>
+      <stop offset="1" stop-color="#4d7d67"/>
+    </linearGradient>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0.18"/>
+      <feBlend mode="multiply" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sea)"/>
+  <path fill="#8fc8c0" opacity="0.26" d="M0 780c165-52 256-39 373 23s245 44 383 21 249 21 366 78 251 62 478-21v119H0z"/>
+  <path filter="url(#paper)" fill="url(#land)" stroke="#4a5d42" stroke-width="8" d="M225 189c147-86 285-101 419-40 88 40 159 21 244-12 131-52 252-14 319 85 44 65 118 73 192 93 97 26 140 103 108 181-29 71-98 101-167 130-85 35-110 103-151 173-57 99-174 135-287 89-89-36-151-99-248-77-126 28-226 82-336 31-93-43-121-127-94-219 19-65-22-112-65-164-78-94-61-209 66-270z"/>
+  <path fill="#386c43" opacity="0.85" d="M990 620c54-35 121-31 166 11 57 53 42 144-22 179-70 39-161-4-185-73-15-44 1-91 41-117zM483 586c62-46 147-30 183 33 31 54 9 126-46 157-63 35-151 7-178-58-20-49-4-98 41-132z"/>
+  <path fill="none" stroke="#7b5832" stroke-width="18" stroke-linecap="round" stroke-dasharray="14 30" d="M326 731c174-97 252-156 311-142 85 20 138-76 268-168 120-85 261-107 384-135"/>
+  <g fill="#d8d0bd" stroke="#756b61" stroke-width="6">
+    <path d="M738 308l57-113 68 118z"/>
+    <path d="M828 344l75-148 90 157z"/>
+    <path d="M967 373l65-121 78 133z"/>
+    <path d="M1112 403l55-103 72 111z"/>
+  </g>
+  <g fill="#24533c" opacity="0.95">
+    <circle cx="1054" cy="640" r="20"/>
+    <circle cx="1098" cy="665" r="24"/>
+    <circle cx="1150" cy="630" r="18"/>
+    <circle cx="530" cy="650" r="22"/>
+    <circle cx="570" cy="697" r="19"/>
+    <circle cx="620" cy="642" r="18"/>
+  </g>
+  <g fill="#5d5145" font-family="Georgia, serif" font-size="38" opacity="0.78">
+    <text x="250" y="795">Grayharbor</text>
+    <text x="825" y="470">Velorian Heights</text>
+    <text x="1130" y="710">Thornwake</text>
+  </g>
+</svg>

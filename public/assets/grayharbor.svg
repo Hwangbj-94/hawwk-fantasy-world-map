@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Grayharbor skyline over dark water</title>
+  <desc id="desc">A simple harbor illustration with mist, water, and distant towers.</desc>
+  <rect width="900" height="520" fill="#18394a"/>
+  <path fill="#d0d8d4" opacity="0.26" d="M0 130c170-49 314-34 430 21s261 37 470-31v137H0z"/>
+  <path fill="#0d2432" d="M0 360h900v160H0z"/>
+  <path fill="#111b24" d="M130 275h64v85h-64zm94-50h52v135h-52zm94 25h80v110h-80zm455-20h48v130h-48z"/>
+  <path fill="none" stroke="#92b3bc" stroke-width="8" opacity="0.55" d="M64 407c110-31 197 31 301 0s172 31 280 0 159 9 224 17"/>
+</svg>

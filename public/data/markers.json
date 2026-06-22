@@ -1,0 +1,69 @@
+[
+  {
+    "id": "grayharbor",
+    "name": "Grayharbor",
+    "type": "Port City",
+    "position": { "x": 330, "y": 730 },
+    "revealOrder": 1,
+    "revealLabel": "Known from the prologue",
+    "summary": "A fog-bound harbor where merchant houses, smugglers, and tired sailors trade rumors before sunrise.",
+    "image": {
+      "src": "assets/grayharbor.svg",
+      "alt": "Grayharbor skyline over dark water"
+    },
+    "relatedEpisodes": ["Prologue", "Episode 1"],
+    "tags": ["coast", "trade", "rumors"]
+  },
+  {
+    "id": "cinder-road",
+    "name": "Cinder Road",
+    "type": "Route",
+    "position": { "x": 640, "y": 590 },
+    "revealOrder": 2,
+    "revealLabel": "Revealed after the first border crossing",
+    "summary": "An old imperial road paved with black stone. Travelers say it remembers the heat of a vanished war.",
+    "relatedEpisodes": ["Episode 2", "Episode 3"],
+    "tags": ["road", "empire", "border"]
+  },
+  {
+    "id": "velorian-archive",
+    "name": "Velorian Archive",
+    "type": "Archive",
+    "position": { "x": 905, "y": 420 },
+    "revealOrder": 3,
+    "revealLabel": "Revealed when the archive is named",
+    "summary": "A cliffside library guarded by oath-bound scholars and a door that opens only to unfinished questions.",
+    "image": {
+      "src": "assets/velorian-archive.svg",
+      "alt": "Cliffside archive tower at dusk"
+    },
+    "relatedEpisodes": ["Episode 3", "Episode 4"],
+    "tags": ["lore", "scholars", "cliffs"]
+  },
+  {
+    "id": "thornwake",
+    "name": "Thornwake",
+    "type": "Forest",
+    "position": { "x": 1130, "y": 665 },
+    "revealOrder": 5,
+    "revealLabel": "Late arc spoiler",
+    "summary": "A living forest where paths rearrange themselves around secrets, grief, and blood bargains.",
+    "relatedEpisodes": ["Episode 7", "Episode 8"],
+    "tags": ["forest", "spoiler", "curse"]
+  },
+  {
+    "id": "ninth-gate",
+    "name": "The Ninth Gate",
+    "type": "Ruin",
+    "position": { "x": 1290, "y": 285 },
+    "revealOrder": 6,
+    "revealLabel": "Major spoiler",
+    "summary": "A broken monumental gate that should not exist on any surviving map.",
+    "image": {
+      "src": "assets/ninth-gate.svg",
+      "alt": "Ancient stone gate under a pale sky"
+    },
+    "relatedEpisodes": ["Episode 8"],
+    "tags": ["ruin", "gate", "major-spoiler"]
+  }
+]

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Cliffside archive tower at dusk</title>
+  <desc id="desc">A tower on a cliff lit by a gold evening sky.</desc>
+  <rect width="900" height="520" fill="#3d4b6d"/>
+  <circle cx="706" cy="114" r="62" fill="#e4c06a"/>
+  <path fill="#243047" d="M0 366l258-142 141 70 165-86 336 174v138H0z"/>
+  <path fill="#b9ad92" stroke="#6a6156" stroke-width="7" d="M395 116h118v266H395z"/>
+  <path fill="#d0c5a8" stroke="#6a6156" stroke-width="7" d="M372 94h164l-27-48H399z"/>
+  <g fill="#463f3a">
+    <rect x="427" y="158" width="24" height="42"/>
+    <rect x="468" y="158" width="24" height="42"/>
+    <rect x="427" y="230" width="24" height="42"/>
+    <rect x="468" y="230" width="24" height="42"/>
+  </g>
+</svg>

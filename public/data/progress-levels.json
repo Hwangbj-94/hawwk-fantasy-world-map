@@ -1,0 +1,20 @@
+[
+  {
+    "id": "prologue",
+    "label": "Prologue",
+    "maxRevealOrder": 1,
+    "description": "Only the safest early locations are visible."
+  },
+  {
+    "id": "episode-3",
+    "label": "Episode 3",
+    "maxRevealOrder": 3,
+    "description": "Reveals places known after the first major journey."
+  },
+  {
+    "id": "episode-8",
+    "label": "Episode 8",
+    "maxRevealOrder": 6,
+    "description": "Reveals later-story regions and faction sites."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "title": "The Lands Beyond the Ninth Gate",
+  "subtitle": "An interactive map that opens as the story advances.",
+  "mapImage": {
+    "src": "assets/placeholder-map.svg",
+    "alt": "Placeholder fantasy terrain map",
+    "width": 1600,
+    "height": 1000
+  },
+  "defaultProgressLevelId": "prologue",
+  "initialView": {
+    "center": { "x": 800, "y": 500 },
+    "zoom": -1,
+    "minZoom": -3,
+    "maxZoom": 2
+  }
+}

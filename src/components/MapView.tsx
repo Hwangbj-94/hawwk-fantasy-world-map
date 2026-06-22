@@ -1,0 +1,83 @@
+import L from 'leaflet';
+import { CRS } from 'leaflet';
+import { ImageOverlay, MapContainer, Marker, Tooltip, useMap } from 'react-leaflet';
+import { useEffect, useMemo } from 'react';
+import type { MapConfig, WorldMarker } from '../types';
+import { assetUrl } from '../utils/assets';
+
+interface MapViewProps {
+  config: MapConfig;
+  markers: WorldMarker[];
+  onMarkerClick: (marker: WorldMarker) => void;
+}
+
+function MapBounds({ config }: { config: MapConfig }) {
+  const map = useMap();
+
+  useEffect(() => {
+    const bounds = L.latLngBounds([
+      [0, 0],
+      [config.mapImage.height, config.mapImage.width]
+    ]);
+
+    map.setMaxBounds(bounds.pad(0.25));
+    map.fitBounds(bounds);
+  }, [config, map]);
+
+  return null;
+}
+
+function markerIcon(type: string) {
+  const markerClass = type.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+  return L.divIcon({
+    className: `map-marker map-marker-${markerClass}`,
+    html: '<span aria-hidden="true"></span>',
+    iconSize: [24, 24],
+    iconAnchor: [12, 12]
+  });
+}
+
+export function MapView({ config, markers, onMarkerClick }: MapViewProps) {
+  const bounds = useMemo<L.LatLngBoundsExpression>(
+    () => [
+      [0, 0],
+      [config.mapImage.height, config.mapImage.width]
+    ],
+    [config.mapImage.height, config.mapImage.width]
+  );
+
+  return (
+    <MapContainer
+      center={[config.initialView.center.y, config.initialView.center.x]}
+      className="map-canvas"
+      crs={CRS.Simple}
+      maxZoom={config.initialView.maxZoom}
+      minZoom={config.initialView.minZoom}
+      scrollWheelZoom
+      touchZoom
+      zoom={config.initialView.zoom}
+      zoomControl
+    >
+      <ImageOverlay
+        alt={config.mapImage.alt}
+        bounds={bounds}
+        url={assetUrl(config.mapImage.src)}
+      />
+      <MapBounds config={config} />
+
+      {markers.map((marker) => (
+        <Marker
+          key={marker.id}
+          eventHandlers={{ click: () => onMarkerClick(marker) }}
+          icon={markerIcon(marker.type)}
+          position={[marker.position.y, marker.position.x]}
+        >
+          <Tooltip direction="top" offset={[0, -12]} opacity={1}>
+            {marker.name}
+          </Tooltip>
+        </Marker>
+      ))}
+    </MapContainer>
+  );
+}
